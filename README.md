@@ -20,7 +20,7 @@
     # git submodule update --init
     # virtualenv venv
     # . ./venv/bin/activate
-    (venv)# pip install ansible
+    (venv)# pip install ansible markupsafe
 
 ## Configuration
 
