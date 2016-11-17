@@ -1,0 +1,13 @@
+---
+
+mysql_root_password: root
+
+mysql_enabled_on_startup: yes
+
+mysql_databases:
+  - name: dolibarr
+
+mysql_users:
+  - name: dolibarr
+    password: dolibarr
+    priv: "dolibarr.*:ALL,GRANT"

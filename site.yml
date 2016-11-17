@@ -1,0 +1,17 @@
+---
+
+- name: Deploy Dolibarr database
+  hosts: dolidb
+  remote_user: root
+  roles:
+    - role: mysql
+      become: yes
+
+- name: Deploy Dolibarr instance
+  hosts: dolinstance
+  remote_user: root
+  roles:
+    - debian_repos
+    - apache2
+    - php
+    - dolibarr

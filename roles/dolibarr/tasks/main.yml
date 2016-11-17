@@ -1,0 +1,29 @@
+---
+
+- name: Download Dolibarr
+  get_url:
+    url: "{{ dolibarr_download_url }}/{{ dolibarr_version }}.{{ dolibarr_download_format }}"
+    dest: "/tmp/dolibarr.{{ dolibarr_download_format }}"
+
+- name: Extract Dolibarr
+  unarchive:
+    src: "/tmp/dolibarr.{{ dolibarr_download_format }}"
+    dest: "/tmp"
+
+- name: Verify Dolibarr install location
+  stat:
+    path: "{{ dolibarr_home }}"
+  register: dolibarr_home_stat
+  failed_when: dolibarr_home_stat.stat.exists
+
+- name: Install Dolibarr
+  command: mv /tmp/dolibarr-{{ dolibarr_version }} {{ dolibarr_home }}
+  when: not dolibarr_home_stat.stat.exists
+
+- name: Fix permissions
+  file:
+    path: "{{ dolibarr_home }}"
+    owner: www-data
+    group: www-data
+    state: directory
+    recurse: yes

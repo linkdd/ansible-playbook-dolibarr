@@ -1,0 +1,46 @@
+---
+
+debian_repositories:
+  - repo: deb http://packages.dotdeb.org jessie all
+    key: https://www.dotdeb.org/dotdeb.gpg
+
+apache_listen_ip: "*"
+apache_listen_port: 80
+apache_listen_port_ssl: 443
+
+apache_create_vhosts: true
+apache_vhosts_filename: "vhosts.conf"
+apache_remove_default_vhost: true
+
+apache_global_vhost_settings: |
+  DirectoryIndex index.php index.html
+
+apache_vhosts:
+  - servername: "dolibarr.local.dev"
+    documentroot: "/opt/dolibarr/htdocs"
+
+apache_state: started
+
+php_enable_webserver: true
+php_webserver_daemon: "apache2"
+
+php_packages:
+  - php7.0
+  - php7.0-dev
+  - php7.0-cli
+  - php7.0-common
+  - php7.0-gd
+  - php7.0-curl
+  - php7.0-imap
+  - php7.0-json
+  - php7.0-opcache
+  - php7.0-xml
+  - php7.0-mbstring
+  - php7.0-sqlite3
+  - php7.0-mysql
+  - php7.0-apcu
+  - libpcre3-dev
+  - libmysqlclient18
+
+dolibarr_home: "/opt/dolibarr"
+dolibarr_version: "3.9.3"
