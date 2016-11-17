@@ -18,6 +18,7 @@
     # git clone https://github.com/linkdd/ansible-playbook-dolibarr.git
     # cd ansible-playbook-dolibarr
     # git submodule update --init
+    # cd ..
     # virtualenv venv
     # . ./venv/bin/activate
     (venv)# pip install ansible markupsafe
