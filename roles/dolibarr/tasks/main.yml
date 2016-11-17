@@ -7,7 +7,8 @@
 
 - name: Extract Dolibarr
   unarchive:
-    remote_src: "/tmp/dolibarr.{{ dolibarr_download_format }}"
+    src: "/tmp/dolibarr.{{ dolibarr_download_format }}"
+    remote_src: yes
     dest: "/tmp"
 
 - name: Verify Dolibarr install location
