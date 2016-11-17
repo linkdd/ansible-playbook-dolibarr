@@ -1,7 +1,7 @@
 [dolinstance]
 
-localhost
+localhost ansible_user='root'
 
 [dolidb]
 
-localhost
+localhost ansible_user='root'
