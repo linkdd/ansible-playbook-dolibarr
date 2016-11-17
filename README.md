@@ -14,7 +14,7 @@
 
 ### Debian
 
-    # apt-get install git python python-pip python-virtualenv
+    # apt-get install git python python-pip python-virtualenv python-dev build-essential
     # git clone https://github.com/linkdd/ansible-playbook-dolibarr.git
     # cd ansible-playbook-dolibarr
     # git submodule update --init
